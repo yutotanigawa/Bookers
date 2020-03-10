@@ -7,13 +7,13 @@
     <%= b.text_field :title %>
     <h5 class="form">Body</h5>
     <%= b.text_area :body %><br>
-    <%= b.submit 'Create Book' %>
+    <%= b.submit 'Update Book' %>
 
   <% end %>
 </form>
 
-<p class ="show-foot-tag"><%= link_to "Show", book_path(@book) %> |
-<%= link_to "Back", books_path %></p>
+<p class ="show-foot-tag"><%= link_to "Show", book_path(@book), :style=>"color:black" %> |
+<%= link_to "Back", books_path, :style=>"color:black" %></p>
 
 
 </body>
