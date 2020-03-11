@@ -26,7 +26,7 @@
         <td><%= link_to "Edit", edit_book_path(book.id), :style=>"color:black" %></td>
         <td><%= link_to "Destroy", book_path(book.id), :style=>"color:black", method: :delete, "data-confirm" => "Are you sure?"%></td>
       </tr>
-      <% end %>
+    <% end %>
 
   </tbody>
 </table>
@@ -36,6 +36,12 @@
 <br>
 <!-- form_forの部分 -->
 	<%= form_for(@book) do |b| %>
+
+      <% if @book.errors.any? %>
+        <% @book.errors.full_messages.each do |message| %>
+           <div class="error"> <%= message %><br></div>
+        <% end %>
+      <% end %>
 
 		<h5 class="form">Title</h5>
 		<%= b.text_field :title %>
